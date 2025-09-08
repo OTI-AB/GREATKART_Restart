@@ -35,8 +35,12 @@
                         >{{ item.product.item_name }}</a
                       >
                       <p class="text-muted small">
-                        Color: 25 Mpx <br />
-                        Size: Canon
+                        {% if item.variations.all %}
+                          {% for i in item.variations.all %}
+                            {{ i.variation_category | capfirst }} :
+                            {{ i.variation_value | capfirst}} <br>
+                          {% endfor %}
+                        {% endif %}
                       </p>
                     </figcaption>
                   </figure>

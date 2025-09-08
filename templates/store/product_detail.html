@@ -58,28 +58,19 @@
               <hr />
               <div class="container text-center">
                 {% if single_product.item_stock <= 0 %}
-                <h5
-                  class="text-danger border border-danger-subtle"
-                  style="width: 200px"
-                >
-                  Out of Stock
-                </h5>
-                {% elif not in_cart %}
-                <button type="submit"
-                  class="btn btn-primary"
-                >
-                  <span class="text">Add to cart</span>
-                  <i class="fas fa-shopping-cart"></i>
-                </button>
+                  <h5
+                    class="text-danger border border-danger-subtle"
+                    style="width: 200px"
+                  >
+                    Out of Stock
+                  </h5>
                 {% else %}
-                <span class="text btn-success btn"
-                  >In Cart <i class="fas fa-check"></i
-                ></span>
-                <a href="{% url 'cart' %}"></a>
-                  <span class="text btn-info btn"
-                    >View Cart <i class="fas fa-arrow-right"></i
-                  ></span>
-                </button>
+                  <button type="submit"
+                    class="btn btn-primary"
+                  >
+                    <span class="text">Add to cart</span>
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
                 {% endif %}
               </div>
             </article>
